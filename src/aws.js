@@ -12,7 +12,7 @@ function buildUserDataScript(githubRegistrationToken, label) {
       `cd "${config.input.runnerHomeDir}"`,
       'export RUNNER_ALLOW_RUNASROOT=1',
       'export DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=1',
-      `./config.sh --url https://github.com/${config.githubContext.owner}/${config.githubContext.repo} --token ${githubRegistrationToken} --labels ${label}`,
+      `./config.sh --unattended --url https://github.com/${config.githubContext.owner}/${config.githubContext.repo} --token ${githubRegistrationToken} --labels ${label}`,
       './run.sh',
     ];
   } else {
@@ -24,7 +24,7 @@ function buildUserDataScript(githubRegistrationToken, label) {
       'tar xzf ./actions-runner-linux-${RUNNER_ARCH}-2.286.1.tar.gz',
       'export RUNNER_ALLOW_RUNASROOT=1',
       'export DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=1',
-      `./config.sh --url https://github.com/${config.githubContext.owner}/${config.githubContext.repo} --token ${githubRegistrationToken} --labels ${label}`,
+      `./config.sh --unattended --url https://github.com/${config.githubContext.owner}/${config.githubContext.repo} --token ${githubRegistrationToken} --labels ${label}`,
       './run.sh',
     ];
   }
